@@ -29,12 +29,14 @@ gradeontest= earnedpoints /testworth
 puts "What is your grade in this class out of 100, in decimal format? (50% = .50)" #asks the user this question
 overallpercent = gets.to_f #takes information the user enters and stores it
 
-overallpercent = overallpercent*100 #transforms the grade from decimal format to a percentage
 
 puts "What are the total number of points in your class?" #asks the user this question
 totalpoints = gets.to_f #takes information the user enters and stores it
 
-gradepoints = totalpoints*overallpercent #takes your grade out of a 100, and multiplys it by the number of points in the class. so if you have a 90 in a class(out of a 100 points), but the class has 200 points, the computer needs to multiply the the total points(200) by the overall percent(.9). This shows that you have 180/200 points in the class.
+gradepoints = totalpoints*overallpercent #takes your grade out of a 100, and multiplys it by the number of points in the class. 
+#so if you have a 90 in a class(out of a 100 points), but the class has 200 points, 
+#the computer needs to multiply the the total points(200) by the overall percent(.9). 
+#This shows that you have 180/200 points in the class.
 
 puts "How many points is the test you took worth?" #asks the user this question
 testpoints = gets.to_f #takes information the user enters and stores it
@@ -43,6 +45,6 @@ puts "What overall grade do you want in this class as a percent?" #asks the user
 goalgrade = gets.to_f #takes information the user and stores it
 
 new_class_total = testpoints + totalpoints #the new_class_total equals the worth of the test you took (testpoints) and the total points within your class (totalpoints) added together
-goalgrade = goalgrade / 100 * new_class_total #goalgrade(what grade you want in the class) is equal to goalgrade times 100. This makes the decimal into a percent, and then the computer takes this percent and multiplys it by the new_class_total. This number will equal the amount of points that your total grade will need to equal for you to reach the goal grade.
+goalgrade = goalgrade * new_class_total #goalgrade(what grade you want in the class) is equal to goalgrade times 100. This makes the decimal into a percent, and then the computer takes this percent and multiplys it by the new_class_total. This number will equal the amount of points that your total grade will need to equal for you to reach the goal grade.
 goalgrade= (goalgrade - gradepoints) /testpoints # goalgrade equals your goalgrade minus the gradepoints you already have, to get the difference between the two sets of points. When the computer gets that number, it will divide it by the number of points on the test, to get the percent you will need to get your "goalgrade"
-puts "The grade you need on this test is #{goalgrade}" #prints the percent you will need to get on this grade to reach goalgrade. 
+puts "The grade you need on this test is #{goalgrade*100}%" #prints the percent you will need to get on this grade to reach goalgrade. 
